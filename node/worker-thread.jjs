@@ -1,0 +1,14 @@
+ 
+ const{ parentPort } = require("node:worker_threads");
+
+ 
+ 
+ let j = 0;
+    for (let i = 0; i < 6000000000; i++) {
+      j++;
+    }
+    res.writeHead (200, { "Content-Type": "text/plain" });
+    res.end('Slow Page ${j}');
+
+
+    parentPort.postMessage(j)
